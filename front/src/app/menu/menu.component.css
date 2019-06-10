@@ -1,0 +1,76 @@
+.main{
+    background-image: url("../../assets/main.jpg");
+    display: flex;
+    height: 900px;
+    background-size: auto 100%;
+    box-shadow: inset 0 0 30px black;
+    background-position: 50%;
+    flex-direction:column;
+    font-size:40px;
+    color:white;
+    font-family: 'Kaushan Script', cursive;
+    overflow-y:scroll;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.list, .meals,.cat{
+    display: flex;
+    justify-content: center;  
+    
+}
+  li{
+    list-style: none;
+    text-align: center;
+    width: 60%;
+    border:10px rgb(235, 137, 10) double;
+    margin:30px;
+    padding:20px;
+    font-size:50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.192);  
+}
+
+.cat{
+    align-items: center;
+}
+
+.cat img{
+    float:left;
+}
+.meals li{
+    font-family: 'Poiret One';
+    border:10px rgb(255, 255, 255) double;
+    background-color: rgba(19, 15, 13, 0.712);
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+.name,.price,.descr{
+    text-align: center;
+    margin: 10px;
+    display: block;
+}
+
+
+.price, .descr,.name{
+    font-size: 30px;
+}
+
+li div{
+    width:50%;
+    white-space: nowrap;
+}
+.meal2 img {
+    width: 200px;
+    box-shadow:0 0 20px rgb(247, 237, 247);
+    border-radius: 100px;
+}
+
+
+button:focus,input:focus{
+    outline: none;
+}
+.i:hover{
+    opacity: 0.5;
+}

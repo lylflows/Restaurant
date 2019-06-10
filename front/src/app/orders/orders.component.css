@@ -1,0 +1,104 @@
+.main{
+    /* background-image: url("../../assets/main.jpg"); */
+    background-image: url('https://jooinn.com/images/italian-food-background-1.jpg');
+    display: flex;
+    height: 900px;
+    background-size: auto 100%;
+    box-shadow: inset 0 0 30px black;
+    background-position: 100%;
+    flex-direction:column;
+    font-size:40px;
+    color:white;
+    font-family: 'Kaushan Script', cursive;
+    overflow-y:scroll;
+    
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+  li{
+    list-style: none;
+    text-align: center;
+    width: 60%;
+    border:10px rgb(235, 137, 10) double;
+    margin:30px;
+    padding:20px;
+    font-size:50px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.192);  
+}
+
+.meals li{
+    font-family: 'Poiret One';
+    border:10px rgb(255, 255, 255) double;
+    background-color: rgba(19, 15, 13, 0.712);
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size:30px;
+    
+}
+li input{
+    align-self: center;
+    font-size: 25px;
+    width:50px;
+    height: 40px;
+    padding:5px;
+    padding-right: 0;
+    text-align: center;
+    border-radius: 20px;
+    border:10px double rgb(148, 82, 179);
+    color:white;
+    font-family: 'Poiret One';
+    background: none;
+    
+
+    
+}
+button,input:focus{
+    outline: none;
+}
+li span{
+    line-height: 2;
+}
+.meals{
+    display: flex;
+    justify-content: center;
+}
+img{
+    box-shadow:0 0 20px rgb(247, 237, 247);
+    border-radius: 100px;
+}
+button{
+    background-color: rgba(19, 15, 13, 0.712);
+    width:60%;
+    align-self: center;
+    border:10px double rgb(102, 11, 105);
+    font-size: 30px;
+    padding:10px;
+    border-radius: 20px;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Poiret One';
+    justify-content: center;
+    white-space: nowrap;
+}
+button:hover{
+    border:10px double rgb(155, 20, 160);
+}
+.but_img{
+    border-radius: 0;
+    box-shadow: none;
+    margin:0;
+    padding-left:30px;
+}
+.size{
+    width:90px;
+    padding:5px;
+    margin: 5px;
+    border:8px double rgb(105, 11, 31);
+}

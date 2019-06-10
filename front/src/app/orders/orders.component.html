@@ -1,0 +1,19 @@
+<div class="main">
+  <h1 style="text-align: center;margin: 1px;text-shadow: 8px 1px 0 rgb(95, 14, 133);">Orders</h1>
+  <button id="make" (click)="making()">MAKE ORDER<img style="padding-left:30px;" class="but_img" width=50 src="../../assets/order.png"></button>
+  <!--  -->
+  <ng-container *ngIf="Making" >
+    <div class="meals" *ngFor ="let m of meals">
+      <li><span>{{m.name}}<br>{{m.price}}<br>{{m.description}}</span><img width=200 src="{{m.image}}"><input [(ngModel)]="m.count" type="number" value="{{m.count}}" min="0" max="20">
+        <!-- <span>
+        <button (click)="mealSize($event)" class="size">mini</button>
+        <button (click)="mealSize($event)" class="size">medi</button>
+        <button (click)="mealSize($event)" class="size">maxi</button>
+
+
+      </span> -->
+    </li>
+    </div>
+    <button id="create" (click)="complete()">Complete</button>
+  </ng-container>
+</div>

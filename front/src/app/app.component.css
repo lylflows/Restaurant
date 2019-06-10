@@ -1,0 +1,256 @@
+body{
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "news main main"
+  "footer footer footer";
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 62px 1fr 200px;
+  height: 100vh;
+  margin: 0;
+}
+#pageHeader{
+    grid-area: header;
+    background: rgb(228, 111, 16);
+    box-shadow: inset 0 0 30px rgba(65, 31, 12, 0.781);
+    /* min-height: 62px; */
+}
+#pageNews{
+    grid-area: news;
+    /* background: yellow; */
+}
+.pageBody{
+    grid-area: main;
+    /* background: green; */
+    min-height: 900px;
+}
+#pageFooter{
+    grid-area: footer;
+    background: rgb(8, 8, 8);
+    box-shadow: inset 0 0 10px  rgba(216, 211, 208, 0.438);
+}
+
+
+* {box-sizing: border-box;}
+.form-inner{
+  display: flex;
+  border:1px rgb(95, 95, 82) solid;
+  box-shadow: 0 0 15px 0 rgb(36, 35, 35);
+  text-align: center;
+  width:370px;
+  flex-direction: column;
+  font-family: 'Poiret One';
+  font-size: 24px;
+  color:rgba(236, 163, 53, 0.897);
+  background-color: rgba(255, 255, 255, 0.233);
+  border-radius: 40px;
+  align-items: center;
+}
+.form-outter{
+  display: flex; 
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-image:url(https://pizzariamoinho.com/wp-content/uploads/2017/01/background-site-1.jpg);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  min-height: 820px;
+  
+}
+.form-inner input{
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Poiret One';
+  padding:7px 7px 7px 14px;
+  box-shadow: 5px 5px rgb(224, 123, 28);
+  border: 3px outset orange;
+  background: rgba(201, 190, 173, 0.753);
+  color:rgb(102, 71, 13);
+  letter-spacing: 2px;
+  font-weight: 800;
+  width: 300px;
+}
+.form-inner input:hover{
+  box-shadow: 5px 5px rgb(184, 95, 12);
+}
+
+.form-inner .button{
+  box-shadow:none;
+  /* background:linear-gradient(to left,rgb(255, 145, 2),rgb(255, 145, 0)); */
+  border: 9px double rgb(223, 151, 18);
+  background:  rgba(201, 139, 45, 0.568);
+  font-size: 25px;
+  color:rgba(255, 255, 255, 0.651);
+  letter-spacing: 2px;
+}
+.button:hover{
+  
+  border: 9px double rgb(255, 166, 0);
+  background: rgba(201, 138, 45, 0.808);
+}
+button,input:focus{
+  outline: none;
+}
+button{
+  background:transparent;
+  border:none;
+  /* border-bottom: 1px orange solid; */
+  color:rgba(236, 163, 53, 0.897);
+  font-size: 30px;
+  font-family: 'Poiret One';
+  margin:10px;
+}
+ #b2{
+  border-bottom:3px solid red; 
+}
+#b1{
+  border-bottom: 1px orange solid;
+}  
+.empMain{
+  display: flex;
+  flex-direction: column;
+}
+.empHeader{
+  display: flex;
+  flex-direction: row;
+  color:white;
+  background: rgb(228, 111, 16);
+  box-shadow: inset 0 0 30px rgba(65, 31, 12, 0.781);
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  width: 100%;
+  min-height: 62px;
+  font-family: 'Poiret One';
+  font-weight: bold;
+}
+.empLi{
+  list-style-type: none;
+  cursor: pointer;
+  word-wrap: break-word;
+  
+}
+.empLi:hover{
+  color:gray;
+}
+.empBody{
+  display: flex;
+  max-height: 900px;
+  min-height: 900px;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  /* background-image: url("../assets/main.jpg"); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* border:4px pink solid; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/photos/md/2017-11-14/drink_lights_eating_restaurant_japanese_.jpg');
+  
+}
+.empFooter{
+  display: flex;
+  background: rgb(8, 8, 8);
+  box-shadow: inset 0 0 10px  rgba(216, 211, 208, 0.438);
+  min-height: 150px;
+}
+.empBodyPart{
+  display: flex;
+   flex-direction: column; 
+   align-items: center;
+   align-content: center;
+   overflow-y: scroll;
+  /* border: 5px solid white; */
+  
+  /* width: 100%; */
+  
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.mine{
+  margin:10px;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding:30px;
+  border:groove 10px orange;
+  border-radius: 40px;
+  font-family: 'Poiret One';
+  color:white;
+  font-size: 30px;
+  font-weight: 800;
+  max-width:500px;
+  
+  
+  background-color:rgba(179, 142, 73, 0.363);
+}
+.undone{
+  margin:10px;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding:30px;
+  border:groove 10px rgb(0, 217, 255);
+  border-radius: 40px;
+  font-family: 'Poiret One';
+  color:white;
+  font-size: 30px;
+  font-weight: 800;
+  background-color:rgba(70, 123, 139, 0.363);
+  max-width:400px;
+  word-wrap: break-word;
+}
+.done{
+  margin:10px;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding:30px;
+  border:groove 10px rgb(94, 255, 0);
+  border-radius: 40px;
+  font-family: 'Poiret One';
+  color:white;
+  font-size: 30px;
+  font-weight: 800;
+  background-color:rgba(70, 139, 70, 0.363);
+}
+.clicked{
+  color:rgb(12, 231, 12);
+  text-align: center;
+}
+.clicked:hover{
+  color:rgb(25, 100, 19);
+}
+h1{
+  color: white;
+  font-family: 'Poiret One';
+}
+@media (max-width: 340px){
+  body {
+    grid-template-areas:
+    "header"
+    "news"
+    "main"
+    "footer";
+    grid-template-rows: 62px 0px 1fr 150px;
+    grid-template-columns: 1fr;
+    min-width: 340px;
+    max-width: 340px;
+  }
+}
+@media all and (max-width: 840px) {
+  body {
+      grid-template-areas:
+      "header"
+      "news"
+      "main"
+      "footer";
+      grid-template-rows: 62px 0px 1fr 150px;
+      grid-template-columns: 1fr;
+      min-width: 600px;
+  }
+}

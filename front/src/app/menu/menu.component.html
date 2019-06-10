@@ -1,0 +1,26 @@
+<div class="main">
+  <h1 style="text-align: center;margin: 1px;text-shadow: 8px 1px 0 rgb(202, 115, 14);">MENU</h1>
+
+  <ng-container *ngIf="showCat">
+      <div class= "list" *ngFor="let c of categories" (click)="getMeals(c)">
+          <li>{{c.name}}</li>
+      </div> 
+  </ng-container>
+  <ng-container *ngIf="!showCat">
+      <div class="cat"><li><img class="i" src="../../assets/backAr.png" width=70 (click)="back()">{{current.name}}</li></div>
+
+      <div  class="meals" *ngFor="let m of meals">
+          <li>
+              
+              <div class ="meal1">
+                  <span class="name">~{{m.name}}~</span>
+                  <span class="price">{{m.price}}</span>
+                  <span class="descr">{{m.description}}</span>
+              </div>
+              <div class="meal2">
+                      <img height=200 src="{{m.image}}">
+              </div>
+          </li>
+          </div>
+  </ng-container> 
+</div>

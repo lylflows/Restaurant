@@ -1,0 +1,120 @@
+@import 'https://use.fontawesome.com/releases/v5.8.1/css/all.css';
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Libre+Baskerville');
+.mainBlock{
+    opacity: 0.8;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    border: 0px solid yellow;
+
+    align-content: space-between;
+    height: 90%;
+}
+.mainBlock1, .mainBlock2{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    justify-content: space-evenly;
+    align-content: space-around;
+    align-content: center;
+    /* justify-content: space-evenly; */
+    border: 0px solid red;
+}
+.mainBlock1{
+    height: 70%;
+    /* min-height: 120px; */
+    height: 120px;
+    /* align-content: flex-end; */
+    border: 0px solid white;
+    align-items: center;
+    /* justify-content: flex-start; */
+}
+.mainBlock2{
+    flex-direction: column;
+    border: 0px solid white;
+    /* height: 40%; */
+    justify-content: flex-end;
+    align-items: center;
+    /* min-height: 30px; */
+    height: 80px;
+}
+.social, .rights{
+    border: 0px solid white;
+    display:flex;
+    height: 100%;
+    flex-direction: row;
+    min-width: 200px;
+    justify-content: space-around; 
+    line-height: 0.1;
+}
+.social{
+    display: flex;
+    align-items: flex-end;
+}
+.rights{
+    /* display: flex; */
+    border: 0px solid white;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    /* align-items: center; */
+}
+.rights p{
+    /* display: flex; */
+    border: 0px solid white;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    /* align-items: center; */
+}
+.icons{
+    color: white;
+    font-size: 1.2em;
+}
+.icons:hover{
+    opacity: 0.6;
+}
+.about, .support, .legal, .other{
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+}
+.header{
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+.list{
+    color: rgb(196, 184, 184);
+}
+.listLinks:hover{
+    /* text-decoration: underline; */
+    cursor: pointer;
+    color: rgb(236, 138, 10);
+}
+a{
+    text-decoration:none;
+}
+
+@media all and (max-width: 840px) {
+   .list{
+       visibility: hidden;
+       max-height: 0px;
+       /* position: absolute; */
+   }
+   .mainBlock{
+       /* height: 10px; */
+       /* height: %; */
+       /* min-height: 200px; */
+       /* max-height: 200px; */
+       /* border: 1px solid yellow; */
+       /* background: black; */
+       /* background: rgb(8, 8, 8); */
+   }
+}
+
+
+
+

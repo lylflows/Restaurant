@@ -1,0 +1,15 @@
+<div class="main">
+  <h1 style="text-align: center;margin: 1px;text-shadow: 8px 1px 0 rgb(17, 175, 30);">RESERVATION</h1>
+  <div class="search">STATUS: <input type="text" [(ngModel)]="search"><button (click)="searcH()">Search</button></div>
+  <p>Number of tables: {{tables.length}}</p>
+  <div class= "list" *ngFor="let c of tables" >
+    <ng-container *ngIf="!checkSt(c)">
+      <img (click)="makeReservation(c)" width=50 src="../../assets/no.png">
+      <li >Table Number: {{c.id}}<br> Number of seats: {{c.number_of_seats}}<br><span class="red" >{{c.status}}</span></li>
+    </ng-container>
+    <ng-container *ngIf="checkSt(c)">
+      <img (click)="makeReservation(c)"width=60 src="../../assets/yes.png">
+      <li >Table Number: {{c.id}}<br> Number of seats: {{c.number_of_seats}}<br><span class="green" >{{c.status}}</span></li>
+    </ng-container>
+     
+</div>

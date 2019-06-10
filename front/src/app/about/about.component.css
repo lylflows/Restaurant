@@ -1,0 +1,147 @@
+@import 'https://use.fontawesome.com/releases/v5.8.2/css/all.css';
+
+.about{
+    background-image: url("../../assets/about.jpg");
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 900px;
+    background-image: cover;
+    font-size: 20px;
+}
+.inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-image: url("../../assets/border.png");
+    height:720px;
+    width:720px;
+}
+@media (max-width:1025px){
+    .about{
+        align-content: flex-end;
+        align-items: flex-end;
+    }
+}
+@media (max-width:975px){
+    .inner{
+        width: 700px;
+        height: 720px;
+        background-size: 100%;
+        background-image: contain;
+        align-self: flex-end;
+        background-repeat: no-repeat;
+
+    }
+}
+@media (max-width:950px){
+    .inner{
+        width: 660px;
+        background-image: contain;
+        align-self: flex-end;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width:910px){
+    .inner{
+        width: 590px;
+        height: 620px;
+        justify-self: center;
+        background-image: contain;
+        align-self: flex-end;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width:841px){
+    .inner{
+        width: 720px;
+        background-image: contain;
+        height: 720px;
+        min-height: 720px;
+        align-self: center;
+    }
+}
+
+
+
+#zatemnenie {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    min-height: 1162px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.map {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    /* justify-self: center;  */
+    /* width: 80%; */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+.top{
+    height: 10%;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    /* justify-content: center; */
+    flex-direction: row;
+    /* float: left; */
+    align-items: center;
+    justify-content: space-around;
+    /* align-items: flex-end; */
+    box-shadow: inset 0px 0px 37px -9px rgba(255,255,255,1);
+}
+.top .title{
+    list-style: none;
+    text-align: center;
+    width: 90%;
+}
+.top li{
+    font-size: 1.6em;
+    /* border: 1px solid red; */
+}
+.mapBody{
+    height: 90%;
+    border-radius: 5px;
+}
+#zatemnenie:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close:hover {background: #e6e6ff;}
+
+
+.list{
+    color: rgb(196, 184, 184);
+}
+.listLinks:hover{
+    /* text-decoration: underline; */
+    cursor: pointer;
+    color: rgb(236, 138, 10);
+}
+a{
+    text-decoration:none;
+}
+
+.exitIcon {
+    color: white;
+}
+.exitIcon:hover{
+    /* color: black; */
+    opacity: 0.8;
+}

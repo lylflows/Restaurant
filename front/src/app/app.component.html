@@ -1,0 +1,110 @@
+<ng-container *ngIf="logging">
+       
+    <div class="form-outter">
+        <form >
+            <div class="form-inner">
+                <div style="display: inline;">
+                    <button style="border-bottom:1px solid orange;" id="b1" (click)="changeForm()">Sign In</button>
+                    <button  style="border-bottom:none" id="b2" (click)="changeForm()">Sign Up</button>
+                </div>
+                <ng-container *ngIf="LOGIN" >
+                    <img width=150 src="../assets/1.gif">
+                    <h3>Sign In</h3>
+                    <label for="username">Login</label>
+                    <input placeholder="Login" type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+                    <label for="password">Password</label>
+                    <input style="margin-bottom: 132px;" placeholder="Password" id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+                    <input  class="button" type="submit" value="Sign In" (click)="userIsAuth()">
+                </ng-container>
+                <ng-container *ngIf="!LOGIN">
+                    <img width=150 src="../assets/1.gif">
+                    <h3>Sign Up</h3>
+                    <label >Login</label>
+                    <input placeholder="Login" type="text"  [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+                    <label >Password</label>
+                    <input placeholder="Password (min:8 chars)"  type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+                    <label >E-mail</label>
+                    <input placeholder="E-mail" type="text"  [(ngModel)]="email" [ngModelOptions]="{standalone:true}"/>
+                    <input  class="button" type="submit" value="Sign Up" (click)="createUser()">                  
+                </ng-container>
+                <input class="button" type="submit" value="Back" (click)="back()" style="border: 9px double rgb(223, 66, 18);
+                background:  rgba(201, 50, 45, 0.568);"> 
+            </div>
+            
+        </form>
+        
+    </div>
+</ng-container>
+<ng-container *ngIf="!logging">
+    <ng-container *ngIf="!authorized">
+            <body> 
+                
+                <app-header id="pageHeader" [authorized]="false" (logging)="logging=$event" (output)="authorized=$event"></app-header>
+                <app-news id="pageNews"></app-news>
+                <div class="pageBody">
+                    <router-outlet></router-outlet>
+                </div>
+                <app-footer [authorized]="false" id="pageFooter"></app-footer>
+            </body>
+
+    </ng-container> 
+    <ng-container *ngIf="authorized">
+        <ng-container *ngIf="!isEmployee">
+            <body> 
+                    <!-- [authorized]="true"  -->
+                <app-header id="pageHeader" [authorized]="true" (logging)="logging=$event" (output)="authorized=$event"></app-header>
+                <app-news id="pageNews"></app-news>
+                <div class="pageBody">
+                    <router-outlet ></router-outlet>
+                </div>
+                <app-footer [authorized]="true" id="pageFooter"></app-footer>
+            </body>
+        </ng-container>
+        <ng-container *ngIf="isEmployee">
+        <div class="empMain">
+            <header class="empHeader">
+                <li class="empLi" (click)="toMyOrders()"> Orders </li>
+                <li class="empLi" (click)="toUndoneOrders()"> My Orders </li>
+                <li class="empLi" (click)="logout()"> Log Out </li>
+            </header>
+            <div class="empBody" >
+                <ng-container *ngIf="!isOrders"> 
+                    <div class="empBodyPart" >
+                        <h1>NEW ORDERS:</h1>
+                        <div *ngFor="let it of undOrders" class="undone">
+                            <li>Sender: {{it.sender.username}} </li>
+                            <li>Status: {{it.status}} </li>
+                            <li>Order body: {{it.meals}}</li>
+                            <li class="clicked" (click)="takeOrder(it)"> Take Order </li>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="isOrders">
+                    <div class="empBodyPart" >
+                        <h1>MY ORDERS IN PROCESS:</h1>
+                        <div class="mine" *ngFor="let item of myOrders">
+                            <li> Sender: {{item.sender.username}} </li>
+                            <li> Status: {{item.status}} </li>
+                            <li> Handler: {{item.handler.username}} </li>
+                            <li>Order body: {{item.meals}}</li>
+                            <li class="clicked" (click)="doOrder(item)"> Do Order </li>
+                        </div>
+                    </div>
+                    <div class="empBodyPart" >
+                        <h1>MY DONE ORDERS:</h1>
+                        <div class="done" *ngFor="let item of doneOrders">
+                            <li> Sender: {{item.sender.username}} </li>
+                            <li> Status: {{item.status}} </li>
+                            <li> Handler: {{item.handler.username}} </li>
+                        </div>
+                    </div>    
+                </ng-container>
+            </div>
+            <footer class="empFooter"></footer>
+        </div>
+    </ng-container>
+</ng-container>
+</ng-container>
+
+
+

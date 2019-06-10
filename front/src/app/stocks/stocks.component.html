@@ -1,0 +1,13 @@
+
+<div class="main">
+  <h1 style="text-align: center;margin: 1px;text-shadow: 8px 1px 0 rgb(179, 19, 19);">STOCKS</h1>
+  <ng-container *ngIf="!oneStock">
+      <div class= "list" *ngFor="let c of stocks" (click)="getStock(c)">
+          <li>{{c.name}}</li>
+      </div> 
+  </ng-container>
+  <ng-container *ngIf="oneStock">
+      <div class="cat"><li><img  src="../../assets/backAr.png" width=70 (click)="back()">{{current.name}}</li></div>
+      <div class="info"><li><span> Start Date:{{current.start_date}}</span><span>End Date:{{current.end_date}}</span><span>{{current.description}}</span></li></div>
+  </ng-container> 
+</div>

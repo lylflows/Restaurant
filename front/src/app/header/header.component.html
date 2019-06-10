@@ -1,0 +1,71 @@
+<!-- header: (Logotip), Menu, Order, Reservation, Stocks, Icon(Customer)  -->
+<!-- <div class="pageBody">
+  <nav>
+      <ul class="mediaHead">
+          <li class="list t"> <i class="fas fa-bars"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars"  style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i>
+              <ul class="dropdown">
+                  <li class="list"> <a routerLink="/">Main</a></li>
+                  <li class="list"> <a routerLink="/menu">Menu</a></li>
+                  <li class="list"> <a routerLink="/orders">Orders</a></li>
+                  <li class="list"> <a routerLink="/reservation">Reservation</a></li>
+                  <li class="list"> <a routerLink="/stocks">Stocks</a></li>
+                  <li class="list"> <a [routerLink]="['/users', im]">Profile</a></li>
+                  <li class="list"> <a routerLink="" (click)="logout()">Log Out</a></li>
+              </ul>
+          </li>
+          <li class="rightPart">
+              <a routerLink="/" style="justify-self:flex-start;"><img  height=50 src="../../assets/rate.png"></a>
+              <a [routerLink]="['/users', im]"><img height =50 src="../../assets/ac.png"></a>
+              
+          </li>
+      </ul>
+      <ul class="topmenu">
+          <li><a routerLink="/"><img src="../../assets/rate.png"></a></li>
+          <li><a routerLink="/menu">Menu</a></li>
+          <li><a routerLink="/order">Order</a></li>
+          <li><a routerLink="/reservation">Reservation</a></li>
+          <li><a routerLink="/stocks">Stocks</a></li>
+          <li><a [routerLink]="['/users',im]"><img src="../../assets/ac.png"></a></li>
+          <li (click)="logout()" id="logReturn" ><img  width=40 src="../../assets/logout.png"></li>
+      </ul>
+  </nav>
+</div> -->
+<!-- header: (Logotip), Menu, Order, Reservation, Stocks, Icon(Customer)  -->
+<div class="pageBody">
+        <nav>
+            <ul class="mediaHead">
+                <li class="list t"> <i class="fas fa-bars"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars"  style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i> <i class="fas fa-bars" style="visibility: hidden;"></i>
+                    <ul class="dropdown" *ngIf="authorized">
+                        <li class="list"> <a routerLink="/">Main</a></li>
+                        <li class="list"> <a routerLink="/menu">Menu</a></li>
+                        <li class="list"> <a routerLink="/orders" >Orders</a></li>
+                        <li class="list"> <a routerLink="/reservation">Reservation</a></li>
+                        <li class="list"> <a routerLink="/stocks">Stocks</a></li>
+                        <li class="list"> <a [routerLink]="['/users', im]">Profile</a></li>
+                        <li class="list" (click)="logout()"> <a  href="/" >Log Out</a></li>
+                    </ul>
+                    <ul class="dropdown" *ngIf="!authorized">
+                      <li class="list"> <a routerLink="/">Main</a></li>
+                      <li class="list"> <a routerLink="/menu">Menu</a></li>
+                      <li class="list"> <a routerLink="/stocks">Stocks</a></li>
+                      <li class="list" (click)="login()"> Log in </li>
+                    </ul>
+                </li>
+                <li class="rightPart" >
+                    <a routerLink="/" style="justify-self:flex-start;"><img  height=50 src="../../assets/rate.png"></a>
+                    <a *ngIf="authorized" [routerLink]="['/users', im]"><img height =50 src="../../assets/ac.png"></a>
+                </li>
+            </ul>
+            <ul class="topmenu">
+                <li><a routerLink="/"><img src="../../assets/rate.png"></a></li>
+                <li><a routerLink="/menu">Menu</a></li>
+                <li><a routerLink="/order" *ngIf="authorized">Order</a></li>
+      
+                <li><a routerLink="/reservation" *ngIf="authorized">Reservation</a></li>
+                <li><a routerLink="/stocks">Stocks</a></li>
+                <li><a [routerLink]="['/users',im]" *ngIf="authorized"><img src="../../assets/ac.png"></a></li>
+                <li id="logReturn" *ngIf="authorized"><a routerLink="/" ><img  width=40 src="../../assets/logout.png" (click)="logout()" ></a></li>
+                <li (click)="login()" *ngIf="!authorized"> <a routerLink=""> Log in </a>  </li>
+            </ul>
+        </nav>
+      </div>

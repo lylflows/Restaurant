@@ -1,0 +1,56 @@
+<div class="mainBlock">
+    <div class="mainBlock1">
+      <div class="about">
+        <li class="header"> About </li>
+        <li> <hr> </li>
+        <li class="list"> <a class="list listLinks" routerLink="/">About Us</a></li>
+      </div>
+      <div class="menu">
+          <li class="header"> Menu </li>
+          <li> <hr> </li>
+          <li class="list"> <a class="list listLinks" routerLink="/menu">Meals</a></li>
+        </div>
+        <div class="menu">
+            <li class="header"> Contacts </li>
+            <li> <hr> </li>
+            <li class="list"> <a class="list listLinks" href="mailto:ifoodkbtu@gmail.com?subject=Thank">Send Email</a></li>
+          </div>
+      <div class="support" *ngIf="authorized">
+        <li class="header"> Reservation </li>
+        <li> <hr> </li>
+        <li class="list"><a class="list listLinks" routerLink="/reservation">Tables</a></li>
+        <!-- <li class="list"> Registration </li> -->
+      </div>
+      <div class="legal" *ngIf="authorized">
+        <li class="header"> Orders </li>
+        <li> <hr> </li>
+        <li class="list" ><a class="list listLinks" routerLink="/order">Orders</a></li>
+        
+      </div>
+      <div class="other" *ngIf="authorized">
+        <li class="header"> Other </li>
+        <li> <hr> </li>
+        <li class="list"> <a class="list listLinks" routerLink="/users/{{imUsername}}">Account</a>  </li>
+        
+      </div>
+    </div>
+  
+    <div class="mainBlock2">
+      <div class="social">
+        <li class="icons"><i class="fab fa-facebook-f"></i></li>
+        <li class="icons"><i class="fab fa-twitter"></i></li>
+        <li class="icons"><i class="fab fa-instagram"></i></li>
+        <li class="icons"><i class="fab fa-tumblr"></i></li>
+        <li class="icons"><i class="fab fa-youtube"></i></li>
+        <li class="icons"><i class="fab fa-linkedin-in"></i></li>
+      </div>
+      <div class="rights">
+        <p style="text-align:center;"><i class="far fa-copyright" >2019 IFood <br> all rights Reserved</i></p>
+      </div>
+    </div>
+    
+    
+     
+    
+  
+  </div>

@@ -1,0 +1,86 @@
+<div class="main">
+  <!-- header -->
+    <div class="mainBlock mainBlock1">
+  
+      <div class="iconPart" >
+        <img src="https://yapic.yandex.ru/get/714794054/islands-200" alt=""  style="border-radius:100px;box-shadow: 0px 0px 40px rgb(10, 10, 10);">
+      </div>
+  
+      <div class="alterIcon">
+        <p style="font-size: 2.5em;"> {{u}} </p>
+      </div>
+  
+    </div>
+  <!-- ссылки -->
+    <div class="mainBlock mainBlock2">
+      <li id="info"(click)="blockType($event)" class="ngList"> Own information</li>
+      <li id="res" (click)="blockType($event)" class="ngList"> Reservations </li>
+      <li id="ord" (click)="blockType($event)" class="ngList"> Orders </li>
+      <li id="card" (click)="blockType($event)" class="ngList"> Card </li>
+    </div>
+  
+    <div class="mainBlock mainBlock3">
+      <ng-container *ngIf="info">
+        <div>
+          <label >Login:</label>
+          <input  type="text"   [ngModelOptions]="{standalone:true}" [(ngModel)]="u" placeholder={{u}}/>
+        </div>
+        <div>
+          <label >E-mail: </label>
+          <input  type="text"  [(ngModel)]="email" [ngModelOptions]="{standalone:true}" [(ngModel)]="email" placeholder={{email}}/>
+        </div>
+        <div>
+            <label >First name: </label>
+            <input  type="text"  [(ngModel)]="firstname" [ngModelOptions]="{standalone:true}" placeholder={{firstname}}/>
+          </div>
+          <div>
+              <label >Last name: </label>
+              <input  type="text"  [(ngModel)]="lastname" [ngModelOptions]="{standalone:true}" placeholder={{lastname}}/>
+            </div>
+          
+        <input type="submit" value="Save changes" (click)="updateUser()">
+      </ng-container>
+      <ng-container *ngIf="reserve" >
+        <div class="table" *ngFor="let t of reserved_tables"><li><p>You reserved table with number {{t.id}}.</p><button (click)="cancel(t)">Cancel</button></li></div>
+      </ng-container>
+      <ng-container *ngIf="orders">
+        <div class="search">STATUS: <input type="text" [(ngModel)]="search"><button (click)=searcH()>Search</button></div>
+        <p>Number of orders: {{my_orders.length}}</p>
+          <div class="order" *ngFor="let order of FinalOrders">
+            <li>
+              <ul *ngFor="let r of order">
+                <li >{{r}}</li>
+              </ul>
+            </li></div>
+      </ng-container>
+  
+  
+      <ng-container *ngIf="card">
+        <ng-container *ngIf="!hasCard" class="cardMaking">
+          <div class="cardMaking">
+            <button  (click)="want()"> GET DISCOUNT CARD</button>
+            <ng-container *ngIf="wanting">
+              <div>
+               <li><button id="br" (click)="createCard($event)"> BRONZE</button></li>
+               <li><button id="sl" (click)="createCard($event)"> SILVER</button></li>
+               <li><button id="g" (click)="createCard($event)"> GOLDEN</button></li>
+               <li><button id="pl" (click)="createCard($event)"> PLATINUM</button></li>
+              </div>
+              <button  (click)="want()"> BACK</button>
+            </ng-container>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="hasCard">
+            <div class="card">
+              <li style="margin-left: 5%">{{my_card.type}} CARD<img style="margin-left: 70px;" height=40 src="../../assets/rate.png"></li>
+              <li style="margin-left: 35%;font-size: 50px;">{{my_card.discount}}%</li>
+              <li style="padding-left: 10%;margin-top:-20px;"><img height=80 src="https://www.usucu.org/content/images/thinicons/emv.png"></li>
+              <li style="margin-left: 45%;margin-top:-50px;">4257 2019 05{{my_card.id}}</li>
+              <li style="margin-left: 30%;margin-top:13px;">{{my_card.owner.last_name}} {{my_card.owner.first_name}}</li>
+            </div>
+            <button class="viewInfo" (click)="view()">View card information</button>
+         </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <!-- УДалить бронь, просмотреть зарез, зарезервировать, мои заказы -->
